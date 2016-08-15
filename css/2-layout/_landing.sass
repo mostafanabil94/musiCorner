@@ -1,0 +1,53 @@
+.landing-container
+    background-image: url(../img/landing-bg.jpg)
+    background-position: 50% 50%
+    background-size: cover
+    background-repeat: no-repeat
+    +size(100% 100vh)
+    text-align: center
+
+    header
+        +size(100% null)
+
+        button
+            float: right
+            margin: 20px
+            border: none
+            border: 2px solid $main-color-2
+            border-radius: 10px
+            color: $main-color-2
+            background-color: transparent
+            padding: 5px
+            width: 100px
+            cursor: pointer
+            transition: all 200ms
+
+            &:focus
+                outline: none
+            &:hover
+                box-shadow: inset 0px 0px 0px 1px  $main-color-2
+
+    .logo
+        display: block
+        margin: 10px auto
+        width: 300px
+    h1
+        margin: 20px 0
+        font-size: 2.5rem
+        color: white
+        text-shadow: 3px 3px 3px rgba(0,0,0,.25)
+        letter-spacing: .04em
+
+    .signup
+        width: 25%
+        margin: 0 auto
+
+        p
+            font-size: 0.8rem
+            color: $main-color-2
+            a
+                color: $main-color-2
+                font-style: italic
+
+                &:hover
+                    text-decoration: underline

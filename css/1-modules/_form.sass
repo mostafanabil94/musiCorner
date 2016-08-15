@@ -1,0 +1,26 @@
+form
+    input
+        display: block
+        background-color: transparent
+        font-size: 1rem
+        border: none
+        border-bottom: 2px solid $main-color-2
+        color: white
+        padding: 5px
+        margin: 10px auto
+        width: 100%
+
+        &:focus
+            outline: none
+
+
+        &[type="submit"]
+            width: 50%
+            margin-top: 20px
+            background-color: $main-color-2
+            border-radius: 10px
+            cursor: pointer
+            transition: all 300ms
+
+            &:hover
+                background-color: $main-color-1
