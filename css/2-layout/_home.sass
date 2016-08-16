@@ -1,0 +1,99 @@
+#home
+    padding-top: 70px
+
+    header
+        position: fixed
+        top: 0
+        z-index: 99
+
+    .sidebar
+        margin-top: 50px
+        float: left
+        text-align: center
+        position: fixed
+
+        .mini-profile
+            background-color: $main-color-1
+            color: white
+            position: relative
+            padding-top: 80px
+            padding-bottom: 40px
+
+            p
+                margin: 0.5rem 0
+                font-size: 1.3rem
+            .info
+                font-size: 0.7rem
+            .photo
+                +size(100px)
+                position: absolute
+                top: -30px
+                left: 50%
+                transform: translateX(-50%)
+                margin: 0 auto
+                background-image: url(../img/default-pp.jpg)
+                background-size: cover
+                background-position: 50% 50%
+                border-radius: 50%
+
+            button.edit
+                color: white
+                font-size: 0.9rem
+                cursor: pointer
+                position: absolute
+                right: 0
+                bottom: 0
+                padding: 5px
+                background: transparent
+                border: none
+
+                &:hover
+                    color: $flat-midnight-blue
+
+                i
+                    padding-right: 5px
+        ul.buttons
+            list-style: none
+            border: 2px solid $main-color-1
+
+
+            li
+                padding: 15px 0
+                background-color: white
+                color: black
+                cursor: pointer
+
+                &:first-child
+                    border-bottom: 2px solid $main-color-1
+
+                &:hover
+                    color: white
+                    background-color: $flat-midnight-blue
+
+
+    .feed
+        float: right
+        width: 70%
+        margin-top: 20px
+        position: relative
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+
+        .mood
+            margin: 10px
+            margin-left: 10%
+            margin-bottom: 0
+            font-weight: bold
+            font-size: 2rem
+            color: $flat-midnight-blue
+        hr
+            height: 1px
+            border: none
+            background-color: $flat-midnight-blue
+            width: 90%
+
+        .friends-content
+            hr
+                width: 100%
+                height: 3px

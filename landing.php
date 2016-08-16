@@ -48,7 +48,7 @@
 		<div class="container">
 			<img class="logo" src="img/Logo.png" alt="LOGO">
 			<h1>Discover new music!</h1>
-			<form class="signup" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+			<form class="signup" method="post" action="signin.php">
 				<input name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username'" maxlength="20" required>
         <input name="fullname" type="text" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'Full Name'" maxlength="50" required>
 				<input name="useremail" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email'" required>

@@ -1,24 +1,16 @@
-<?php include 'includes/connection.php';
-  $usernameERR = $passwordERR = '';
-		if($_SERVER['REQUEST_METHOD'] == "POST") {
-			  $email = htmlspecialchars($_POST['useremail']);
-        $password = md5($_POST['userpassword']);
-
-      	if(empty($email)){
-          $emailERR = "<div class='alert-danger'> Please Enter Your Email! </div>";
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $emailERR = "<div class='alert-danger'> Invalid Email Format! </div>";
-        }
-        if(empty($password)) $passwordERR  = "<div class='alert-danger'> Please Enter Your Password! </div>";
-
-				$signin_query = "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'";
-
-				$result = mysqli_query($connection, $signin_query);
-				if($result){
-					echo "<script> alert('Login Successfull. Enjoy your own musiCorner ^_^') </script>";
-				} else {
-						echo "<script> alert('Login Failed! :( )') </script>";
-				}
+<?php
+  include 'includes/connection.php';
+  $loginERR = "";
+    if (isset($_GET['login'])) {
+      if ($_GET['login'] == "empty") {
+        $loginERR = "<div class='alert alert-danger'> inputs are empty </div>";
+      }
+      if ($_GET['login'] == "DB_error") {
+        $loginERR = "<div class='alert alert-danger'> Data Base Error </div>";
+      }
+      if ($_GET['login'] == "error") {
+        $loginRR = "<div class='alert alert-danger'> mail Or Password mismatch </div>";
+      }
     }
 ?>
 <!DOCTYPE html>
@@ -36,12 +28,13 @@
 
 <body>
 	<div class="container signin">
+    <?php echo "$loginERR"; ?>
 		<img class="logo" src="img/Logo.png" alt="LOGO">
-		<form class="signup" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+		<form class="signup" method="post" action="account/login.php">
 			<h1>Login</h1>
 			<input name="useremail" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email'" required>
 			<input name="userpassword" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password'" required>
-			<input type="submit" value="Login">
+			<input name="login" type="submit" value="Login">
 		</form>
 	</div>
 

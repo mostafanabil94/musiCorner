@@ -1,0 +1,50 @@
+.friends-content
+    width: 100%
+    .friend
+        background-color: white
+        padding: 10px
+        +size(90% 200px)
+        margin: 10px auto
+        min-width: 200px
+        position: relative
+        .profile
+            display: flex
+            align-items: center
+
+            .pic
+                +size(50px)
+                background-image: url("../img/default-pp.jpg")
+                background-position: 50% 50%
+                background-size: cover
+                border-radius: 50%
+            p
+                margin: 0 10px
+                font-size: 1.1rem
+                letter-spacing: 0.03rem
+                span
+                    font-size: 0.8rem
+                    color: $flat-gray-4
+
+        .latest-music
+            .song
+                margin: 25px 10px
+                +size(80px)
+
+                img
+                    +size(80px)
+
+                p
+                    display: none
+
+                button
+                    +size(30px)
+                    line-height: 30px
+                    font-size: 1rem
+
+        a
+            color: white
+            background-color: $flat-midnight-blue
+            padding: 10px
+            position: absolute
+            right: 5px
+            bottom: 5px

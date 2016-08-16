@@ -21,6 +21,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+.card {
+  background-color: white;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: black;
+}
+
 form input {
   display: block;
   background-color: transparent;
@@ -41,11 +50,227 @@ form input[type="submit"] {
   background-color: #E67E22;
   border-radius: 10px;
   cursor: pointer;
-  -webkit-transition: all 300ms;
-          transition: all 300ms;
+  -webkit-transition: background-color 300ms;
+          transition: background-color 300ms;
 }
 form input[type="submit"]:hover {
   background-color: #F39C12;
+}
+
+header {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+}
+header .add {
+  float: left;
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F39C12;
+}
+header .add .fa-headphones {
+  font-size: 3rem;
+  color: white;
+}
+header .add .fa-plus {
+  color: #34495E;
+  margin-left: -0.5rem;
+  margin-top: -0.8rem;
+  font-size: 1.5rem;
+}
+header .logo {
+  width: 130px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 50px;
+}
+header .search-box {
+  position: absolute;
+  right: 2px;
+  margin: 0 30px;
+  height: 70px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .search-box input#search {
+  width: 250px;
+  height: 40px;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  padding-left: 45px;
+  border-radius: 5px;
+  border: 2px solid #E67E22;
+}
+header .search-box input#search:focus {
+  outline: none;
+}
+header .search-box .icon {
+  position: absolute;
+  margin-left: 11px;
+  z-index: 1;
+}
+header .profile {
+  position: absolute;
+  padding: 0 7px;
+  right: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  margin: 0 30px;
+  -webkit-transition: all 300ms;
+          transition: all 300ms;
+}
+header .profile:hover {
+  background-color: rgba(242, 238, 232, 0.5);
+}
+header .profile p {
+  margin: 5px;
+}
+header .profile .photo {
+  height: 50px;
+  width: 50px;
+  background-image: url(../img/default-pp.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+}
+
+.song {
+  margin: 20px;
+  height: 255px;
+  width: 180px;
+  background-color: #F39C12;
+  color: white;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.song img {
+  height: 180px;
+  width: 180px;
+}
+.song p {
+  margin: 2px;
+  margin-top: 4px;
+  font-size: 1.1rem;
+}
+.song p.info {
+  font-size: 0.8rem;
+  margin-left: -1.2rem;
+}
+.song p.info span {
+  font-weight: bold;
+}
+.song button {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: transparent;
+  border: none;
+  height: 50px;
+  width: 50px;
+  font-size: 1.8rem;
+  line-height: 50px;
+  background: #e62117;
+  border-radius: 50%;
+  color: white;
+}
+
+.friends-content {
+  width: 100%;
+}
+.friends-content .friend {
+  background-color: white;
+  padding: 10px;
+  height: 200px;
+  width: 90%;
+  margin: 10px auto;
+  min-width: 200px;
+  position: relative;
+}
+.friends-content .friend .profile {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.friends-content .friend .profile .pic {
+  height: 50px;
+  width: 50px;
+  background-image: url("../img/default-pp.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
+}
+.friends-content .friend .profile p {
+  margin: 0 10px;
+  font-size: 1.1rem;
+  letter-spacing: 0.03rem;
+}
+.friends-content .friend .profile p span {
+  font-size: 0.8rem;
+  color: #7F8C8D;
+}
+.friends-content .friend .latest-music .song {
+  margin: 25px 10px;
+  height: 80px;
+  width: 80px;
+}
+.friends-content .friend .latest-music .song img {
+  height: 80px;
+  width: 80px;
+}
+.friends-content .friend .latest-music .song p {
+  display: none;
+}
+.friends-content .friend .latest-music .song button {
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 1rem;
+}
+.friends-content .friend a {
+  color: white;
+  background-color: #2C3E50;
+  padding: 10px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
 .landing-container {
@@ -125,9 +350,7 @@ body {
 .signin form {
   max-width: 250px;
   margin: 0 auto;
-  background-color: white;
   padding: 30px 40px;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
 }
 .signin form input:not([type="submit"]) {
   color: black;
@@ -139,4 +362,117 @@ body {
 .signin form h1 {
   margin-bottom: 30px;
   color: #E67E22;
+}
+
+#home {
+  padding-top: 70px;
+}
+#home header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+#home .sidebar {
+  margin-top: 50px;
+  float: left;
+  text-align: center;
+  position: fixed;
+}
+#home .sidebar .mini-profile {
+  background-color: #F39C12;
+  color: white;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+#home .sidebar .mini-profile p {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+#home .sidebar .mini-profile .info {
+  font-size: 0.7rem;
+}
+#home .sidebar .mini-profile .photo {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: 0 auto;
+  background-image: url(../img/default-pp.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+}
+#home .sidebar .mini-profile button.edit {
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  background: transparent;
+  border: none;
+}
+#home .sidebar .mini-profile button.edit:hover {
+  color: #2C3E50;
+}
+#home .sidebar .mini-profile button.edit i {
+  padding-right: 5px;
+}
+#home .sidebar ul.buttons {
+  list-style: none;
+  border: 2px solid #F39C12;
+}
+#home .sidebar ul.buttons li {
+  padding: 15px 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+#home .sidebar ul.buttons li:first-child {
+  border-bottom: 2px solid #F39C12;
+}
+#home .sidebar ul.buttons li:hover {
+  color: white;
+  background-color: #2C3E50;
+}
+#home .feed {
+  float: right;
+  width: 70%;
+  margin-top: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#home .feed .mood {
+  margin: 10px;
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #2C3E50;
+}
+#home .feed hr {
+  height: 1px;
+  border: none;
+  background-color: #2C3E50;
+  width: 90%;
+}
+#home .feed .friends-content hr {
+  width: 100%;
+  height: 3px;
 }
