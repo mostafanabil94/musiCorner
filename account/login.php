@@ -11,22 +11,27 @@
 
 				$result = mysqli_query($connection, $signin_query);
 
-				if ($result) {
+				if ($result = mysqli_query($connection, $signin_query)) {
 					if (mysqli_num_rows($result) == 1) {
-						$_SESSION['email'] = $email;
-						$_SESSION['password'] = $password;
-						header("Location: ../home.php");
+						while ($signin_row = mysqli_fetch_array($result)) {
+							$_SESSION['id'] = $signin_row['id'];
+							$_SESSION['email'] = $email;
+							$_SESSION['password'] = $password;
+							$_SESSION['username'] = $signin_row['username'];
+						}
+						header("Location:../home.php");
 
 					}else {
-						header("Location: ../signin.php?login=error");
+						header("Location:../signin.php?login=error");
 					}
+
 				} else {
-					header("Location: ../signin.php?login=DB_error");
+					header("Location:../signin.php?login=DB_error");
 				}
 			} else {
-				header("Location: ../signin.php?login=empty");
+				header("Location:../signin.php?login=empty");
 			}
 		} else {
-			header("Location: ../signin.php");
+			header("Location:../signin.php");
 		}
 ?>

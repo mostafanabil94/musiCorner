@@ -30,13 +30,27 @@ a {
   color: black;
 }
 
+#add, #home, #profile, #results {
+  padding-top: 100px;
+}
+
+@media(max-width: 750px) {
+  #add, #home, #profile, #results {
+    padding-top: 80px;
+  }
+}
+@media(max-width: 540px) {
+  #add, #home, #profile, #results {
+    padding-top: 120px;
+  }
+}
 form input {
   display: block;
   background-color: transparent;
   font-size: 1rem;
   border: none;
   border-bottom: 2px solid #E67E22;
-  color: white;
+  color: #E67E22;
   padding: 5px;
   margin: 10px auto;
   width: 100%;
@@ -52,17 +66,33 @@ form input[type="submit"] {
   cursor: pointer;
   -webkit-transition: background-color 300ms;
           transition: background-color 300ms;
+  color: white;
 }
 form input[type="submit"]:hover {
   background-color: #F39C12;
+}
+
+p.validation {
+  padding: 5px 10px;
+  color: orangered;
+  border: 2px solid orangered;
+  background-color: white;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 0.04rem;
+  margin-top: -12px;
+  position: relative;
+  left: -4%;
+  font-size: 0.8rem;
 }
 
 header {
   background-color: white;
   height: 70px;
   width: 100%;
-  position: relative;
-  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  z-index: 99;
 }
 header .add {
   float: left;
@@ -81,6 +111,8 @@ header .add {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 300ms;
+          transition: all 300ms;
   background-color: #F39C12;
 }
 header .add .fa-headphones {
@@ -93,6 +125,9 @@ header .add .fa-plus {
   margin-top: -0.8rem;
   font-size: 1.5rem;
 }
+header .add:hover {
+  background-color: #f5b043;
+}
 header .logo {
   width: 130px;
   position: absolute;
@@ -101,6 +136,7 @@ header .logo {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   margin-left: 50px;
+  cursor: pointer;
 }
 header .search-box {
   position: absolute;
@@ -116,8 +152,11 @@ header .search-box {
       -ms-flex-align: center;
           align-items: center;
 }
+header .search-box .search {
+  position: relative;
+}
 header .search-box input#search {
-  width: 250px;
+  max-width: 250px;
   height: 40px;
   border: none;
   font-size: 10pt;
@@ -132,7 +171,12 @@ header .search-box input#search:focus {
 header .search-box .icon {
   position: absolute;
   margin-left: 11px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
+  color: #E67E22;
 }
 header .profile {
   position: absolute;
@@ -150,20 +194,45 @@ header .profile {
   margin: 0 30px;
   -webkit-transition: all 300ms;
           transition: all 300ms;
+  cursor: pointer;
 }
 header .profile:hover {
   background-color: rgba(242, 238, 232, 0.5);
 }
 header .profile p {
   margin: 5px;
+  color: #E67E22;
 }
-header .profile .photo {
+header .profile img.photo {
   height: 50px;
   width: 50px;
-  background-image: url(../img/default-pp.jpg);
-  background-size: cover;
-  background-position: 50% 50%;
   border-radius: 50%;
+}
+header .profile .profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  list-style: none;
+  border-left: 2px solid #E67E22;
+  border-right: 2px solid #E67E22;
+  border-bottom: 2px solid #E67E22;
+}
+header .profile .profile-dropdown li {
+  color: #E67E22;
+  background-color: white;
+  padding: 10px 40px;
+  border-bottom: 1px solid #E67E22;
+}
+header .profile .profile-dropdown li:hover {
+  color: white;
+  background-color: #2C3E50;
+}
+header .profile .profile-dropdown li i {
+  margin-left: 10px;
+}
+header .profile .profile-dropdown a:last-child li {
+  border-bottom: none;
 }
 
 .song {
@@ -192,7 +261,7 @@ header .profile .photo {
 .song p.info span {
   font-weight: bold;
 }
-.song button {
+.song .yt-link {
   position: absolute;
   bottom: -5px;
   right: -5px;
@@ -205,6 +274,10 @@ header .profile .photo {
   background: #e62117;
   border-radius: 50%;
   color: white;
+  cursor: pointer;
+}
+.song .yt-link:focus {
+  outline: none;
 }
 
 .friends-content {
@@ -258,19 +331,39 @@ header .profile .photo {
 .friends-content .friend .latest-music .song p {
   display: none;
 }
-.friends-content .friend .latest-music .song button {
+.friends-content .friend .latest-music .song .yt-link {
   height: 30px;
   width: 30px;
   line-height: 30px;
   font-size: 1rem;
 }
-.friends-content .friend a {
+.friends-content .friend a.cta {
   color: white;
   background-color: #2C3E50;
   padding: 10px;
   position: absolute;
   right: 5px;
   bottom: 5px;
+}
+
+.account {
+  margin: 20px;
+  height: 220px;
+  width: 180px;
+  background-color: #F39C12;
+  color: white;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.account img {
+  height: 180px;
+  width: 180px;
+}
+.account p {
+  margin: 2px;
+  margin-top: 4px;
+  font-size: 1rem;
 }
 
 .landing-container {
@@ -283,7 +376,10 @@ header .profile .photo {
   text-align: center;
 }
 .landing-container header {
+  height: auto;
   width: 100%;
+  background-color: transparent;
+  position: static;
 }
 .landing-container header button {
   float: right;
@@ -321,15 +417,15 @@ header .profile .photo {
   width: 25%;
   margin: 0 auto;
 }
-.landing-container .signup p {
+.landing-container .signup p.login {
   font-size: 0.8rem;
   color: #E67E22;
 }
-.landing-container .signup p a {
+.landing-container .signup p.login a {
   color: #E67E22;
   font-style: italic;
 }
-.landing-container .signup p a:hover {
+.landing-container .signup p.login a:hover {
   text-decoration: underline;
 }
 
@@ -364,17 +460,9 @@ body {
   color: #E67E22;
 }
 
-#home {
-  padding-top: 70px;
-}
-#home header {
-  position: fixed;
-  top: 0;
-  z-index: 99;
-}
 #home .sidebar {
-  margin-top: 50px;
-  float: left;
+  margin-top: 20px;
+  width: 280px;
   text-align: center;
   position: fixed;
 }
@@ -385,6 +473,12 @@ body {
   padding-top: 80px;
   padding-bottom: 40px;
 }
+#home .sidebar .mini-profile a.profile {
+  color: white;
+}
+#home .sidebar .mini-profile a.profile:hover {
+  text-decoration: underline;
+}
 #home .sidebar .mini-profile p {
   margin: 0.5rem 0;
   font-size: 1.3rem;
@@ -392,7 +486,7 @@ body {
 #home .sidebar .mini-profile .info {
   font-size: 0.7rem;
 }
-#home .sidebar .mini-profile .photo {
+#home .sidebar .mini-profile img.photo {
   height: 100px;
   width: 100px;
   position: absolute;
@@ -402,12 +496,9 @@ body {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   margin: 0 auto;
-  background-image: url(../img/default-pp.jpg);
-  background-size: cover;
-  background-position: 50% 50%;
   border-radius: 50%;
 }
-#home .sidebar .mini-profile button.edit {
+#home .sidebar .mini-profile a.edit {
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
@@ -418,10 +509,13 @@ body {
   background: transparent;
   border: none;
 }
-#home .sidebar .mini-profile button.edit:hover {
+#home .sidebar .mini-profile a.edit:hover {
   color: #2C3E50;
 }
-#home .sidebar .mini-profile button.edit i {
+#home .sidebar .mini-profile a.edit:focus {
+  outline: none;
+}
+#home .sidebar .mini-profile a.edit i {
   padding-right: 5px;
 }
 #home .sidebar ul.buttons {
@@ -431,7 +525,7 @@ body {
 #home .sidebar ul.buttons li {
   padding: 15px 0;
   background-color: white;
-  color: black;
+  color: #E67E22;
   cursor: pointer;
 }
 #home .sidebar ul.buttons li:first-child {
@@ -444,7 +538,6 @@ body {
 #home .feed {
   float: right;
   width: 70%;
-  margin-top: 20px;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -472,7 +565,292 @@ body {
   background-color: #2C3E50;
   width: 90%;
 }
+#home .feed .friends-content {
+  min-height: 250px;
+}
 #home .feed .friends-content hr {
   width: 100%;
   height: 3px;
+}
+#home .feed .friends-content p.no-friends {
+  text-align: center;
+  margin-top: 50px;
+  color: #aaa;
+  font-style: italic;
+}
+
+#profile .container {
+  padding-top: 1px;
+  margin-bottom: 30px;
+  max-width: 860px;
+}
+#profile img.main-photo {
+  display: block;
+  margin: 20px auto;
+  height: 200px;
+  border: 2px solid #E67E22;
+  padding: 5px;
+}
+#profile p.full-name {
+  text-align: center;
+  font-size: 2rem;
+  color: #E67E22;
+}
+#profile .follow, #profile .edit {
+  width: 130px;
+  background-color: #E67E22;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: background-color 300ms;
+          transition: background-color 300ms;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 10px;
+}
+#profile .follow i, #profile .edit i {
+  margin-right: 10px;
+}
+#profile .follow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#profile .follow:hover {
+  background-color: #F39C12;
+}
+#profile .edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #2C3E50;
+  color: white;
+}
+#profile .edit:hover {
+  background-color: #46627f;
+}
+#profile .song-list {
+  margin: 0 20px;
+}
+#profile .song-list .mood {
+  margin: 10px;
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #2C3E50;
+}
+#profile .song-list hr {
+  height: 1px;
+  border: none;
+  background-color: #2C3E50;
+  width: 90%;
+}
+#profile h1 {
+  color: #2C3E50;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.02rem;
+  margin-bottom: 30px;
+}
+#profile .edit-info {
+  width: 40%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+#profile .edit-info input {
+  margin: 30px auto;
+}
+
+#add .container {
+  max-width: 760px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+#add .container h1 {
+  color: #34495E;
+  text-align: center;
+}
+#add .container h1 i {
+  color: #E67E22;
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+#add .container .add {
+  width: 80%;
+  margin: 50px auto;
+}
+#add .container .add input {
+  margin: 30px;
+}
+#add .container .add input[type=submit] {
+  width: 150px;
+  margin: 40px auto;
+}
+#add .container .add input[type=file] {
+  width: 300px;
+  display: inline-block;
+  margin: 0;
+  border: none;
+}
+#add .container .add .group {
+  margin: 30px;
+}
+#add .container .add .group label {
+  color: #f0b37e;
+  margin-right: 30px;
+  margin-left: 7px;
+}
+#add .container .add .group select {
+  height: 40px;
+  width: 150px;
+  color: #34495E;
+  border: 1px solid #E67E22;
+  padding-left: 10px;
+}
+#add .container .add .group select:focus {
+  outline: none;
+}
+
+#results .container {
+  max-width: 760px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+#results .container h1 {
+  color: #34495E;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 50px;
+}
+#results .container h1 i {
+  color: #E67E22;
+  margin-right: 10px;
+}
+#results .container .category {
+  margin: 10px;
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #2C3E50;
+}
+#results .container hr {
+  height: 1px;
+  border: none;
+  background-color: #2C3E50;
+  width: 90%;
+}
+
+@media(max-width: 750px) {
+  header {
+    height: 60px;
+  }
+  header .add {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    -webkit-transition: none;
+            transition: none;
+  }
+  header .add .fa-headphones {
+    font-size: 2.2rem;
+  }
+  header .add .fa-plus {
+    font-size: 1.2rem;
+  }
+  header .logo {
+    width: 100px;
+    margin-left: 20px;
+  }
+  header .search-box {
+    right: 50px;
+    height: 60px;
+  }
+  header .profile {
+    right: 10px;
+    margin: 0px;
+    height: 60px;
+  }
+  header .profile p {
+    display: none;
+  }
+  header .profile img.photo {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+  }
+  header .profile .profile-dropdown {
+    top: 60px;
+    left: auto;
+    right: 0;
+  }
+  header .profile .profile-dropdown li {
+    color: #E67E22;
+    background-color: white;
+    padding: 10px 30px;
+  }
+}
+@media(max-width: 540px) {
+  header .search-box {
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid #F39C12;
+    border-top: 1px solid #F39C12;
+    margin: 0;
+    height: 35px;
+  }
+  header .search-box .search {
+    margin: 0 auto;
+  }
+  header .search-box input#search {
+    width: 100%;
+    margin: 0 auto;
+    height: 30px;
+  }
+}
+@media(max-width: 750px) {
+  #home .sidebar {
+    position: static;
+    margin: 20px auto;
+    width: 70%;
+  }
+  #home .feed {
+    float: none;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #add .container {
+    width: 70%;
+  }
+  #add .container .add {
+    width: 100%;
+  }
+  #add .container .add input, #add .container .add .group {
+    margin-left: 0;
+  }
+
+  .landing-container .signup {
+    width: 50%;
+  }
+
+  #profile .container {
+    width: 90%;
+    padding-top: 50px;
+  }
+  #profile .edit-info {
+    width: 70%;
+  }
+
+  #results .container {
+    width: 70%;
+  }
+
+  .signin {
+    width: 90%;
+    padding-top: 20px;
+  }
 }

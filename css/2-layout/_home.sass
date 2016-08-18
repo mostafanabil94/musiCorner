@@ -1,14 +1,7 @@
 #home
-    padding-top: 70px
-
-    header
-        position: fixed
-        top: 0
-        z-index: 99
-
     .sidebar
-        margin-top: 50px
-        float: left
+        margin-top: 20px
+        width: 280px
         text-align: center
         position: fixed
 
@@ -19,24 +12,26 @@
             padding-top: 80px
             padding-bottom: 40px
 
+            a.profile
+                color: white
+                &:hover
+                    text-decoration: underline
+
             p
                 margin: 0.5rem 0
                 font-size: 1.3rem
             .info
                 font-size: 0.7rem
-            .photo
+            img.photo
                 +size(100px)
                 position: absolute
                 top: -30px
                 left: 50%
                 transform: translateX(-50%)
                 margin: 0 auto
-                background-image: url(../img/default-pp.jpg)
-                background-size: cover
-                background-position: 50% 50%
                 border-radius: 50%
 
-            button.edit
+            a.edit
                 color: white
                 font-size: 0.9rem
                 cursor: pointer
@@ -50,6 +45,9 @@
                 &:hover
                     color: $flat-midnight-blue
 
+                &:focus
+                    outline: none
+
                 i
                     padding-right: 5px
         ul.buttons
@@ -60,7 +58,7 @@
             li
                 padding: 15px 0
                 background-color: white
-                color: black
+                color: $main-color-2
                 cursor: pointer
 
                 &:first-child
@@ -70,11 +68,9 @@
                     color: white
                     background-color: $flat-midnight-blue
 
-
     .feed
         float: right
         width: 70%
-        margin-top: 20px
         position: relative
         display: flex
         flex-wrap: wrap
@@ -93,7 +89,15 @@
             background-color: $flat-midnight-blue
             width: 90%
 
+
         .friends-content
+            min-height: 250px
             hr
                 width: 100%
                 height: 3px
+
+            p.no-friends
+                text-align: center
+                margin-top: 50px
+                color: #aaa
+                font-style: italic

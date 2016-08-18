@@ -1,15 +1,15 @@
 <?php
   include 'includes/connection.php';
-  $loginERR = "";
+  $loginErr = "";
     if (isset($_GET['login'])) {
       if ($_GET['login'] == "empty") {
-        $loginERR = "<div class='alert alert-danger'> inputs are empty </div>";
+        $loginErr = "<p class='validation'> inputs are empty </p>";
       }
       if ($_GET['login'] == "DB_error") {
-        $loginERR = "<div class='alert alert-danger'> Data Base Error </div>";
+        $loginErr = "<p class='validation'> Data Base Error </p>";
       }
       if ($_GET['login'] == "error") {
-        $loginRR = "<div class='alert alert-danger'> mail Or Password mismatch </div>";
+        $loginErr = "<p class='validation'> mail Or Password mismatch </p>";
       }
     }
 ?>
@@ -28,10 +28,10 @@
 
 <body>
 	<div class="container signin">
-    <?php echo "$loginERR"; ?>
 		<img class="logo" src="img/Logo.png" alt="LOGO">
 		<form class="signup" method="post" action="account/login.php">
 			<h1>Login</h1>
+      <?php echo "$loginErr" ?>
 			<input name="useremail" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email'" required>
 			<input name="userpassword" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password'" required>
 			<input name="login" type="submit" value="Login">

@@ -1,0 +1,68 @@
+@media(max-width: 750px)
+    header
+        $header-height: 60px
+        height: $header-height
+
+        .add
+            +size($header-height)
+            line-height: $header-height
+            transition: none
+
+            .fa-headphones
+                font-size: 2.2rem
+            .fa-plus
+                font-size: 1.2rem
+
+        .logo
+            width: 100px
+            margin-left: 20px
+
+
+        .search-box
+            right: 50px
+            height: $header-height
+
+
+        .profile
+            right: 10px
+            margin: 0px
+            height: $header-height
+
+            p
+                display: none
+
+            img.photo
+                +size(45px)
+                border-radius: 50%
+
+            .profile-dropdown
+                top: $header-height
+                left: auto
+                right: 0
+
+                li
+                    color: $main-color-2
+                    background-color: white
+                    padding: 10px 30px
+
+@media(max-width: 540px)
+    header
+        $header-height: 60px
+
+        .search-box
+            top: $header-height
+            right: 0
+            left: 0
+            background-color: transparentize(white, 0.2)
+            border-bottom: 1px solid $main-color-1
+            border-top: 1px solid $main-color-1
+            margin: 0
+            height: 35px
+
+            .search
+                margin: 0 auto
+
+            input#search
+                width: 100%
+                margin: 0 auto
+                height: 30px

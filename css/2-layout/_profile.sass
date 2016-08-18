@@ -1,0 +1,79 @@
+#profile
+    .container
+        padding-top: 1px
+        margin-bottom: 30px
+        max-width: 860px
+
+    img.main-photo
+        display: block
+        margin: 20px auto
+        height: 200px
+        border: 2px solid $main-color-2
+        padding: 5px
+
+    p.full-name
+        text-align: center
+        font-size: 2rem
+        color: $main-color-2
+
+    .follow, .edit
+        width: 130px
+        background-color: $main-color-2
+        border-radius: 10px
+        cursor: pointer
+        transition: background-color 300ms
+        color: white
+        border: none
+        font-size: 1rem
+        padding: 10px
+
+        i
+            margin-right: 10px
+
+    .follow
+        position: absolute
+        top: 10px
+        right: 10px
+        &:hover
+            background-color: $main-color-1
+
+    .edit
+        position: absolute
+        top: 10px
+        right: 10px
+        background-color: $flat-midnight-blue
+        color: white
+        &:hover
+            background-color: lighten($flat-wet-asphalt, 10%)
+
+
+    .song-list
+        margin: 0 20px
+
+        .mood
+            margin: 10px
+            margin-left: 10%
+            margin-bottom: 0
+            font-weight: bold
+            font-size: 2rem
+            color: $flat-midnight-blue
+        hr
+            height: 1px
+            border: none
+            background-color: $flat-midnight-blue
+            width: 90%
+
+    h1
+        color: $flat-midnight-blue
+        text-align: center
+        font-size: 1.2rem
+        letter-spacing: 0.02rem
+        margin-bottom: 30px
+
+    .edit-info
+        width: 40%
+        margin: 0 auto
+        padding: 50px 0
+
+        input
+            margin: 30px auto

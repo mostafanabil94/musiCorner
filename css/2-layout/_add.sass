@@ -1,0 +1,48 @@
+#add
+    .container
+        max-width: 760px
+        padding: 40px
+        margin-bottom: 30px
+
+        h1
+            color: $flat-wet-asphalt
+            text-align: center
+
+            i
+                color: $main-color-2
+                font-size: 6rem
+                margin-bottom: 20px
+
+        .add
+            width: 80%
+            margin: 50px auto
+
+            input
+                margin: 30px
+
+            input[type=submit]
+                width: 150px
+                margin: 40px auto
+
+            input[type=file]
+                width: 300px
+                display: inline-block
+                margin: 0
+                border: none
+
+            .group
+                margin: 30px
+
+                label
+                    color: lighten($main-color-2, 20%)
+                    margin-right: 30px
+                    margin-left: 7px
+
+                select
+                    +size(150px 40px)
+                    color: $flat-wet-asphalt
+                    border: 1px solid $main-color-2
+                    padding-left: 10px
+
+                    &:focus
+                        outline: none

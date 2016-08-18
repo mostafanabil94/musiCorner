@@ -1,0 +1,44 @@
+<header class="card cf">
+  <a href="addsong.php">
+    <div class="add">
+      <i class="fa fa-headphones" aria-hidden="true"></i>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+  </a>
+  <a href="home.php"><img class="logo" src="img/Logo.png" alt="LOGO"></a>
+  <?php
+  $search = '';
+  if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+  }
+  echo '<form action="results.php?search_value='.$search.'">'; ?>
+    <div class="search-box" >
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input name="search" type="search" id="search" placeholder="Search..." />
+    </div>
+  </form>
+  <div class="profile">
+    <?php
+      $username = '';
+      $get_username = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+      $fire_get_username = mysqli_query($connection, $get_username);
+
+      while ($rows = mysqli_fetch_array($fire_get_username)) {
+          $username = $rows['username'];
+      }
+    ?>
+    <p><?php echo "$username"?></p>
+    <img src="img/default-pp.jpg" alt="Profile Picture" class="photo">
+    <ul class="profile-dropdown">
+      <?php echo '<a href="profile.php?profile_id='.$user_id.'">' ?>
+        <li>View Profile</li>
+      </a>
+      <?php echo '<a href="profile_edit.php?profile_id='.$user_id.'">'; ?>
+        <li>Edit Profile</li>
+      </a>
+      <a href="account/logout.php">
+        <li>Logout <i class="fa fa-sign-out"></i></li>
+      </a>
+    </ul>
+  </div>
+</header>
