@@ -41,7 +41,7 @@
   				$result = mysqli_query($connection, $signup_query);
 
   				if($result){
-  					echo "<script> alert('Signup Successfull. Enjoy your own musiCorner ^_^') </script>";
+  					header('Location: signin.php');
   				}
 				}
       }

@@ -13,8 +13,10 @@
   }
   echo '<form action="results.php?search_value='.$search.'">'; ?>
     <div class="search-box" >
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input name="search" type="search" id="search" placeholder="Search..." />
+      <div class="search">
+        <span class="icon"><i class="fa fa-search"></i></span>
+        <input name="search" type="search" id="search" placeholder="Search..." />
+      </div>
     </div>
   </form>
   <div class="profile">
@@ -30,6 +32,9 @@
     <p><?php echo "$username"?></p>
     <img src="img/default-pp.jpg" alt="Profile Picture" class="photo">
     <ul class="profile-dropdown">
+      <a href="home.php">
+        <li>Home <i class="fa fa-home" aria-hidden="true"></i></li>
+      </a>
       <?php echo '<a href="profile.php?profile_id='.$user_id.'">' ?>
         <li>View Profile</li>
       </a>

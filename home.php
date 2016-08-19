@@ -110,8 +110,7 @@
 							if($fire_fetch_friends){
 								$num_friends = mysqli_num_rows($fire_fetch_friends);
 								if($num_friends == 0){
-									echo '<p class="no-friends">You have no friends...Youre going to die alone! :(</p>
-									</hr>';
+									echo '<p class="no-friends">You have no friends...<br/>Check out these <span>new songs</span>!</p>';
 								}
 								while ($friend = mysqli_fetch_array($fire_fetch_friends)) {
 									echo '<div class="friend">';
@@ -136,7 +135,7 @@
 
 									if($fire_get_friend_music){
 										if(mysqli_num_rows($fire_get_friend_music) == 0){
-												echo '<p class="no-friends">Your friend has not suggested any music yet. Ask him to suggest some? ^_^</p>';
+												echo '<p class="no-friends">'.$friend_username.' has not suggested any music yet.</p>';
 										}
 										echo '<div class="latest-music">';
 										$max_num_songs = 0;
@@ -187,6 +186,10 @@
 			});
 
 			$("#home .sidebar ul.buttons li.music").click(function() {
+				$("#home .music-content").show();
+				$("#home .friends-content").hide();
+			});
+			$("#home .friends-content span").click(function() {
 				$("#home .music-content").show();
 				$("#home .friends-content").hide();
 			});

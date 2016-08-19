@@ -53,7 +53,7 @@
 					if($fire_is_friend){
 						if(mysqli_num_rows($fire_is_friend) != 0){
 							echo '<a name="unfollow" class="follow" href="includes/unfollow.php?unfollow_id='.$profile_id.'">
-										<i class="fa fa-user-plus" aria-hidden="true"></i>UNFOLLOW</a>';
+										<i class="fa fa-user-times" aria-hidden="true"></i>UNFOLLOW</a>';
 						} else {
 							echo '<a name="follow" class="follow" href="includes/follow.php?follow_id='.$profile_id.'">
 										<i class="fa fa-user-plus" aria-hidden="true"></i>FOLLOW</a>';

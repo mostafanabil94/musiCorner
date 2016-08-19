@@ -44,6 +44,11 @@
 
 			<h1>Edit your info</h1>
 			<form class="edit-form" method="post" action="<?php echo "$_SERVER[PHP_SELF]"; ?>">
+				<div class="group">
+					<label>Profile Picture</label>
+					<input name="profile-pic" type="file">
+				</div>
+				
 				<input name="userfullname" type="text" placeholder="New Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Full Name'" maxlength="15" required>
 
 				<input name="email" type="email" placeholder="New Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Email'" required>

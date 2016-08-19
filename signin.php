@@ -6,10 +6,10 @@
         $loginErr = "<p class='validation'> inputs are empty </p>";
       }
       if ($_GET['login'] == "DB_error") {
-        $loginErr = "<p class='validation'> Data Base Error </p>";
+        $loginErr = "<p class='validation'> Database Error </p>";
       }
       if ($_GET['login'] == "error") {
-        $loginErr = "<p class='validation'> mail Or Password mismatch </p>";
+        $loginErr = "<p class='validation'>Wrong Email/Password !</p>";
       }
     }
 ?>
@@ -29,7 +29,7 @@
 <body>
 	<div class="container signin">
 		<img class="logo" src="img/Logo.png" alt="LOGO">
-		<form class="signup" method="post" action="account/login.php">
+		<form class="signup card" method="post" action="account/login.php">
 			<h1>Login</h1>
       <?php echo "$loginErr" ?>
 			<input name="useremail" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email'" required>

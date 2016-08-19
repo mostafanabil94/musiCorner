@@ -71,6 +71,30 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #F39C12;
 }
+form input[type="file"] {
+  width: 300px;
+  display: inline-block;
+  margin: 0;
+  border: none;
+}
+form .group {
+  margin-left: 30px;
+}
+form .group label {
+  color: #f0b37e;
+  margin-right: 30px;
+  margin-left: 7px;
+}
+form .group select {
+  height: 40px;
+  width: 150px;
+  color: #34495E;
+  border: 1px solid #E67E22;
+  padding-left: 10px;
+}
+form .group select:focus {
+  outline: none;
+}
 
 p.validation {
   padding: 5px 10px;
@@ -210,6 +234,8 @@ header .profile img.photo {
 }
 header .profile .profile-dropdown {
   display: none;
+  width: 165px;
+  text-align: center;
   position: absolute;
   top: 70px;
   left: 0;
@@ -229,7 +255,7 @@ header .profile .profile-dropdown li:hover {
   background-color: #2C3E50;
 }
 header .profile .profile-dropdown li i {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 header .profile .profile-dropdown a:last-child li {
   border-bottom: none;
@@ -578,6 +604,13 @@ body {
   color: #aaa;
   font-style: italic;
 }
+#home .feed .friends-content p.no-friends span {
+  color: black;
+  cursor: pointer;
+}
+#home .feed .friends-content p.no-friends span:hover {
+  text-decoration: underline;
+}
 
 #profile .container {
   padding-top: 1px;
@@ -597,7 +630,8 @@ body {
   color: #E67E22;
 }
 #profile .follow, #profile .edit {
-  width: 130px;
+  text-align: center;
+  width: 115px;
   background-color: #E67E22;
   border-radius: 10px;
   cursor: pointer;
@@ -658,6 +692,14 @@ body {
   margin: 0 auto;
   padding: 50px 0;
 }
+#profile .edit-info .group {
+  margin-left: 0;
+  margin-bottom: -15px;
+}
+#profile .edit-info .group input[type="file"] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #profile .edit-info input {
   margin: 30px auto;
 }
@@ -683,33 +725,12 @@ body {
 #add .container .add input {
   margin: 30px;
 }
+#add .container .add input[type="file"] {
+  margin: 10px;
+}
 #add .container .add input[type=submit] {
   width: 150px;
   margin: 40px auto;
-}
-#add .container .add input[type=file] {
-  width: 300px;
-  display: inline-block;
-  margin: 0;
-  border: none;
-}
-#add .container .add .group {
-  margin: 30px;
-}
-#add .container .add .group label {
-  color: #f0b37e;
-  margin-right: 30px;
-  margin-left: 7px;
-}
-#add .container .add .group select {
-  height: 40px;
-  width: 150px;
-  color: #34495E;
-  border: 1px solid #E67E22;
-  padding-left: 10px;
-}
-#add .container .add .group select:focus {
-  outline: none;
 }
 
 #results .container {
