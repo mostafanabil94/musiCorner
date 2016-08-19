@@ -62,6 +62,7 @@
 														`password`= '$new_password', `username` = '$username' WHERE `id` = '$user_id'";
 					$fire_update_profile = mysqli_query($connection, $update_profile);
 					if($fire_update_profile){
+						$_SESSION['email'] = $new_email;
 						echo '<script>alert("Profile changes done!");</script>';
 					}
 				}

@@ -74,7 +74,7 @@
         <input name="useremail" type="email" placeholder="Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'Email'" required>
             <?php echo "$emailERR" ?>
         <input name="userpassword" type="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password'" required>
-				<input type="submit" value="Sign up">
+				<input name="signup" type="submit" value="Sign up">
         <p class="login">or <a href="signin.php">Login</a></p>
 			</form>
 		</div>
