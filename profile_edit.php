@@ -48,8 +48,8 @@
 					<label>Profile Picture</label>
 					<input name="profile-pic" type="file">
 				</div>
-				
-				<input name="userfullname" type="text" placeholder="New Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Full Name'" maxlength="15" required>
+
+				<input name="userfullname" type="text" placeholder="New Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Full Name'" required>
 
 				<input name="email" type="email" placeholder="New Email" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Email'" required>
 
@@ -67,7 +67,8 @@
 														`password`= '$new_password', `username` = '$username' WHERE `id` = '$user_id'";
 					$fire_update_profile = mysqli_query($connection, $update_profile);
 					if($fire_update_profile){
-						echo '<script>alert("Profile changes done!");</script>';
+						$_SESSION['email'] = $new_email;
+						header('Location: home.php');
 					}
 				}
 			 ?>
