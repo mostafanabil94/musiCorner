@@ -2,14 +2,15 @@
 	include 'includes/connection.php';
 	if(isset($_SESSION['email']) && isset($_SESSION['password']) == true){
 
-		$email 	= $_SESSION['email'];
-		$homepage_query = "SELECT * FROM `users` WHERE `email` = '$email'";
+		$current_email = $_SESSION['email'];
+		$homepage_query = "SELECT * FROM `users` WHERE `email` = '$current_email'";
 
 		$result = mysqli_query($connection, $homepage_query);
 
 			while($rows = mysqli_fetch_array($result)){
 				if(mysqli_num_rows($result) == 1 ){
 					$user_id = $rows['id'];
+					$email = $rows['email'];
 					$password = $rows['password'];
 					$fullname = $rows['full name'];
 					$username = $rows['username'];
@@ -134,6 +135,9 @@
 									$fire_get_friend_music = mysqli_query($connection, $get_friend_music);
 
 									if($fire_get_friend_music){
+										if(mysqli_num_rows($fire_get_friend_music) == 0){
+												echo '<p class="no-friends">Your friend has not suggested any music yet. Ask him to suggest some? ^_^</p>';
+										}
 										echo '<div class="latest-music">';
 										$max_num_songs = 0;
 										while (($friend_music = mysqli_fetch_array($fire_get_friend_music)) && ($max_num_songs <= 3)) {

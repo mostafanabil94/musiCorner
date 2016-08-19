@@ -67,7 +67,7 @@
 		<div class="container">
 			<img class="logo" src="img/Logo.png" alt="LOGO">
 			<h1>Discover new music!</h1>
-			<form class="signup" method="post" action="landing.php">
+			<form class="signup" method="post" action="index.php">
         <input name="fullname" type="text" placeholder="Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'Full Name'" maxlength="50" required>
         <input name="username" type="text" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username'" maxlength="30" required></input>
 				    <?php echo "$usernameERR" ?>

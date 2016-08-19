@@ -24,5 +24,6 @@
 
     echo '<script> alert("You have unfollowed this user. He must have been annoying :P")</script>';
   }
-  header('Location: ../home.php');
+  echo $unfollow_id;
+  header("Location: ../profile.php?profile_id=$unfollow_id");
  ?>

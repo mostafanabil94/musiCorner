@@ -64,7 +64,6 @@
 					if($fire_update_profile){
 						echo '<script>alert("Profile changes done!");</script>';
 					}
-
 				}
 			 ?>
 		</div>

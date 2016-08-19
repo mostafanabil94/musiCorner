@@ -27,5 +27,6 @@
 
     echo '<script> alert("You have followed this user!")</script>';
   }
-  header('Location: ../home.php');
+  echo $follow_id;
+  header("Location: ../profile.php?profile_id=$follow_id");
  ?>
