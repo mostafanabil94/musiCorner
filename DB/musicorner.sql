@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 19, 2016 at 02:09 AM
+-- Generation Time: Aug 21, 2016 at 03:12 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -59,11 +59,11 @@ CREATE TABLE `moods` (
 --
 
 INSERT INTO `moods` (`id`, `name`) VALUES
-(1, 'happy'),
-(2, 'sad'),
-(3, 'energetic'),
-(4, 'romantic'),
-(5, 'light');
+(1, 'Happy'),
+(2, 'Sad'),
+(3, 'Energetic'),
+(4, 'Romantic'),
+(5, 'Light');
 
 -- --------------------------------------------------------
 
@@ -90,8 +90,7 @@ INSERT INTO `music list` (`id`, `name`, `picture`, `youtube link`, `mood`, `adde
 (2, 'Counting Stars', 'img/counting stars.jpg', 'https://www.youtube.com/watch?v=hT_nvWreIhg', '1', '1', 'OneRepublic'),
 (3, 'Formidable', 'img/Stromae-Formidable.jpg', 'https://www.youtube.com/watch?v=S_xH7noaqTA', '2', '2', 'Stromae'),
 (4, 'Snow', 'img/2001-a-space-odyssey-wallpaper.jpg', 'https://www.youtube.com/watch?v=pjmL5WWgO6o', '3', '1', 'Nathalie Saba'),
-(11, 'Song', 'img/2001-a-space-odyssey-wallpaper.jpg', 'google.com', '5', '9', 'Amr Diab'),
-(12, 'Song2', 'img//2001-a-space-odyssey-wallpaper.jpg', 'google.com', '5', '1', 'Ana');
+(15, 'Hello', 'img/Cover.jpg', 'https://www.google.com', '2', '1', 'Adele');
 
 -- --------------------------------------------------------
 
@@ -113,12 +112,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full name`, `username`, `email`, `password`, `profile picture`) VALUES
-(1, 'Mostafa Nabil', 'mostafanabil94', 'mostafanabil94@gmail.com', '202cb962ac59075b964b07152d234b70', ''),
-(2, 'Abdelrahman Osama', '3abkareenno', 'abdelrahman.osama93@gmail.com', '202cb962ac59075b964b07152d234b70', ''),
-(3, 'mahmoud amin', 'aminawe', 'amin@gmail.com', '202cb962ac59075b964b07152d234b70', ''),
-(7, 'Ahmed Hani', 'ahmedhani93', 'hani@gmail.com', '202cb962ac59075b964b07152d234b70', ''),
-(9, 'Ahmed Talaat', 'ahmedtalaat', 'ahmedtalaat@gmail.com', '202cb962ac59075b964b07152d234b70', ''),
-(10, 'Nabil Gamal', 'nabilgamal63', 'nabilgamal63@gmail.com', '202cb962ac59075b964b07152d234b70', '');
+(1, 'Mostafa Nabil Mohamed', 'mostafanabil94', 'mostafanabil94@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/1958182_807255292635930_1811656003_n.jpg'),
+(2, 'Abdelrahman Osama', '3abkareenno', 'abdelrahman.osama93@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg'),
+(3, 'mahmoud amin', 'aminawe', 'amin@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg'),
+(12, 'Ahmed Hani', 'hani93', 'hani@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg');
 
 --
 -- Indexes for dumped tables
@@ -156,7 +153,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `moods`
 --
@@ -166,12 +163,12 @@ ALTER TABLE `moods`
 -- AUTO_INCREMENT for table `music list`
 --
 ALTER TABLE `music list`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

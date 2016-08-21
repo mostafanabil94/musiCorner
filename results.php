@@ -5,6 +5,16 @@
 		$user_id	= $_SESSION['id'];
 		$email 		= $_SESSION['email'];
 
+		$profile_pic_query = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+
+		$result = mysqli_query($connection, $profile_pic_query);
+
+			while($rows = mysqli_fetch_array($result)){
+				if(mysqli_num_rows($result) == 1 ){
+					$profile_pic = $rows['profile picture'];
+				}
+			}
+
 	} else {
 		header('Location: home.php');
 	}
@@ -67,9 +77,10 @@
 				while ($people = mysqli_fetch_array($fire_search_by_people)) {
 					$people_id = $people['id'];
 					$people_name = $people['full name'];
+					$people_profile_pic = $people['profile picture'];
 					echo '<a href="profile.php?profile_id='.$people_id.'">
 									<div class="account card">
-										<img src="img/default-pp.jpg" alt="" class="photo">
+										<img src="'.$people_profile_pic.'" alt="" class="main-photo">
 										<p class="name">'.$people_name.'</p>
 									</div>
 								</a>';

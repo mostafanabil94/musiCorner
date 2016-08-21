@@ -11,6 +11,7 @@
 			while($rows = mysqli_fetch_array($result)){
 				if(mysqli_num_rows($result) == 1 ){
 					$user_id = $rows['id'];
+					$profile_pic = $rows['profile picture'];
 				}
 			}
 	} else {
@@ -63,7 +64,7 @@
 							while ($rows = mysqli_fetch_array($fire_fetch_moods)) {
 								$current_mood_id = $rows['id'];
 								$current_mood_name = $rows['name'];
-								echo '<option value="'.$current_mood_name.'">'.$current_mood_name.'</option>';
+								echo '<option value="'.$current_mood_id.'">'.$current_mood_name.'</option>';
 							}
 						}
 					?>
@@ -80,7 +81,7 @@
 				$link = strip_tags($_POST['link']);
 
 				if($_POST['mood'] != ''){
-					$mood = $current_mood_id;
+					$mood = $_POST['mood'];
 				}
 
 				if($_FILES['photo']['name'] != ''){
@@ -116,6 +117,12 @@
 						echo '<div class="alert alert-danger">Image File Size is much bigger then Expect!</div>';
 					}
 				} else {
+						$songname = strip_tags($_POST['songname']);
+						$artist = strip_tags($_POST['artist']);
+						$link = strip_tags($_POST['link']);
+						if($_POST['mood'] != ''){
+							$mood = $_POST['mood'];
+						}
 						$image_db_path = 'img//2001-a-space-odyssey-wallpaper.jpg';
 						$add_song_query = "INSERT INTO `music list`
 						(`name`, `picture`, `youtube link`, `mood`, `added by`, `artist`)

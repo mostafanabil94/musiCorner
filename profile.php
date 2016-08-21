@@ -16,6 +16,7 @@
 
 					$fullname = $rows['full name'];
 					$profile_username = $rows['username'];
+					$profile_pic = $rows['profile picture'];
 				}
 			}
 	} else {
@@ -40,7 +41,7 @@
 	<?php include "includes/header.php" ?>
 
 	<div class="container card cf">
-		<img src="img/default-pp.jpg" alt="" class="main-photo">
+		<?php echo '<img src="'.$profile_pic.'" alt="" class="main-photo">' ?>
 		<p class="full-name"><?php echo "$fullname" ?></p>
 
 		<?php
@@ -53,7 +54,7 @@
 					if($fire_is_friend){
 						if(mysqli_num_rows($fire_is_friend) != 0){
 							echo '<a name="unfollow" class="follow" href="includes/unfollow.php?unfollow_id='.$profile_id.'">
-										<i class="fa fa-user-plus" aria-hidden="true"></i>UNFOLLOW</a>';
+										<i class="fa fa-user-times" aria-hidden="true"></i>UNFOLLOW</a>';
 						} else {
 							echo '<a name="follow" class="follow" href="includes/follow.php?follow_id='.$profile_id.'">
 										<i class="fa fa-user-plus" aria-hidden="true"></i>FOLLOW</a>';

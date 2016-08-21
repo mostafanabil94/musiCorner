@@ -33,15 +33,16 @@
         if(empty($password)) $passwordERR  = "<div class='alert-danger'> Please Enter Your Password! </div>";
 
 				if (($usernameERR == '') && ($fullnameERR == '') && ($emailERR == '') && ($passwordERR == '')) {
+					$image_db_path = 'img//default-pp.jpg';
           $signup_query = "INSERT INTO `users`
-  				(`username`, `full name`, `email`, `password`)
+  				(`username`, `full name`, `email`, `password`, `profile picture`)
   				VALUES
-  				('$username', '$fullname', '$email', '$password')";
+  				('$username', '$fullname', '$email', '$password', '$image_db_path')";
 
   				$result = mysqli_query($connection, $signup_query);
 
   				if($result){
-  					echo "<script> alert('Signup Successfull. Enjoy your own musiCorner ^_^') </script>";
+  					header('Location: signin.php');
   				}
 				}
       }
