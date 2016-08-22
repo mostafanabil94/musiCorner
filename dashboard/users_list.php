@@ -97,8 +97,14 @@
 								if (isset($_GET['delete'])) {
 				          $delete_id = $_GET['delete'];
 				          $delete_user = "DELETE FROM `users` WHERE id='$delete_id'";
-
 				          $fire_delete_user = mysqli_query($connection, $delete_user);
+
+									$delete_user_songs = "DELETE FROM `music list` WHERE added by='$delete_id'";
+									$fire_delete_user_songs = mysqli_query($connection, $delete_user_songs);
+
+									$delete_user_friends = "DELETE FROM `friends` WHERE friend1_id='$delete_id' OR friend2_id='$delete_id'";
+									$fire_delete_user_friends = mysqli_query($connection, $delete_user_friends);
+
 
 				          if ($fire_delete_user) {
 				            echo "<script> alert('Done !') </script>";

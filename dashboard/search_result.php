@@ -53,9 +53,9 @@
 					<div class="col-md-10">
 						<?php
               $search_value = '';
-							echo '<h1><i class="fa fa-search"></i> Search results for '.$search_value.'</h1>';
               if(isset($_GET['search'])){
                 $search_value = $_GET['search'];
+								echo '<h1><i class="fa fa-search"></i> Search results for '.$search_value.'</h1>';
 
                 $search_by_music = "SELECT * FROM `music list` WHERE `name` LIKE '%$search_value%' OR `artist` LIKE '%$search_value%'";
                 $fire_search_by_music = mysqli_query($connection, $search_by_music);
