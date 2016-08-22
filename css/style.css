@@ -635,6 +635,10 @@ body {
 }
 #home .sidebar ul.buttons li:hover {
   color: white;
+  background-color: rgba(44, 62, 80, 0.3);
+}
+#home .sidebar ul.buttons li.active {
+  color: white;
   background-color: #2C3E50;
 }
 #home .feed {

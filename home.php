@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" href="img/favicon.ico">
 </head>
 
 <body id="home">
@@ -62,7 +63,7 @@
 				<?php echo '<a href="profile_edit.php?profile_id='.$user_id.'" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i>Edit info</a>' ?>
 			</div>
 			<ul class="buttons">
-				<li class="music">Discover New Songs</li>
+				<li class="active music">Discover New Songs</li>
 					<li class="friends">Friends Suggestions</li>
 			</ul>
 		</div>
@@ -194,14 +195,24 @@
 			$("#home .sidebar ul.buttons li.music").click(function() {
 				$("#home .music-content").show();
 				$("#home .friends-content").hide();
+
+				$("#home .sidebar ul.buttons li.music").addClass('active');
+				$("#home .sidebar ul.buttons li.friends").removeClass('active');
+
 			});
 			$("#home .friends-content span").click(function() {
 				$("#home .music-content").show();
 				$("#home .friends-content").hide();
+
+				$("#home .sidebar ul.buttons li.music").addClass('active');
+				$("#home .sidebar ul.buttons li.friends").removeClass('active');
 			});
 			$("#home .sidebar ul.buttons li.friends").click(function() {
 				$("#home .music-content").hide();
 				$("#home .friends-content").show();
+
+				$("#home .sidebar ul.buttons li.music").removeClass('active');
+				$("#home .sidebar ul.buttons li.friends").addClass('active');
 			});
 		});
 

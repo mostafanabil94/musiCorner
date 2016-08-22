@@ -24,6 +24,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.ico">
 </head>
 
 <body>
