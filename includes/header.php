@@ -22,15 +22,17 @@
   <div class="profile">
     <?php
       $username = '';
+      $profpic = '';
       $get_username = "SELECT * FROM `users` WHERE `id` = '$user_id'";
       $fire_get_username = mysqli_query($connection, $get_username);
 
       while ($rows = mysqli_fetch_array($fire_get_username)) {
           $username = $rows['username'];
+          $profpic = $rows['profile picture'];
       }
     ?>
     <p><?php echo "$username"?></p>
-    <?php echo '<div class="photo" style="background-image: url(&quot;'.$_SESSION['profile picture'].'&quot;);"></div>' ?>
+    <?php echo '<div class="photo" style="background-image: url(&quot;'.$profpic.'&quot;);"></div>' ?>
     <ul class="profile-dropdown">
       <a href="home.php">
         <li>Home <i class="fa fa-home" aria-hidden="true"></i></li>

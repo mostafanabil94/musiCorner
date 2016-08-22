@@ -46,7 +46,7 @@
 			<form class="edit-form" method="post" action="<?php echo "$_SERVER[PHP_SELF]"; ?>" enctype="multipart/form-data">
 				<div class="group">
 					<label>Profile Picture</label>
-					<input name="profile-pic" type="file">
+					<input name="profile-pic" type="file" required>
 				</div>
 
 				<input name="userfullname" type="text" placeholder="New Full Name" onfocus="this.placeholder=''" onblur="this.placeholder = 'New Full Name'" required>
