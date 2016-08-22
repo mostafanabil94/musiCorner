@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Aug 21, 2016 at 03:12 AM
+-- Generation Time: Aug 22, 2016 at 05:03 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -37,11 +37,8 @@ CREATE TABLE `friends` (
 --
 
 INSERT INTO `friends` (`id`, `friend1_id`, `friend2_id`) VALUES
-(4, 3, 1),
 (5, 2, 3),
-(6, 3, 2),
-(15, 1, 2),
-(16, 1, 3);
+(6, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -86,11 +83,8 @@ CREATE TABLE `music list` (
 --
 
 INSERT INTO `music list` (`id`, `name`, `picture`, `youtube link`, `mood`, `added by`, `artist`) VALUES
-(1, 'Happy', 'img/Pharrell_Williams_-_Happy.jpg', 'https://www.youtube.com/watch?v=y6Sxv-sUYtM', '1', '1', 'Pharrell Williams'),
-(2, 'Counting Stars', 'img/counting stars.jpg', 'https://www.youtube.com/watch?v=hT_nvWreIhg', '1', '1', 'OneRepublic'),
 (3, 'Formidable', 'img/Stromae-Formidable.jpg', 'https://www.youtube.com/watch?v=S_xH7noaqTA', '2', '2', 'Stromae'),
-(4, 'Snow', 'img/2001-a-space-odyssey-wallpaper.jpg', 'https://www.youtube.com/watch?v=pjmL5WWgO6o', '3', '1', 'Nathalie Saba'),
-(15, 'Hello', 'img/Cover.jpg', 'https://www.google.com', '2', '1', 'Adele');
+(24, 'Happy', 'img/Pharrell_Williams_-_Happy.jpg', 'https://www.youtube.com/watch?v=y6Sxv-sUYtM', '1', '2', 'Pharell Williams');
 
 -- --------------------------------------------------------
 
@@ -104,18 +98,20 @@ CREATE TABLE `users` (
   `username` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `profile picture` varchar(250) NOT NULL
+  `profile picture` varchar(250) NOT NULL,
+  `role` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `full name`, `username`, `email`, `password`, `profile picture`) VALUES
-(1, 'Mostafa Nabil Mohamed', 'mostafanabil94', 'mostafanabil94@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/1958182_807255292635930_1811656003_n.jpg'),
-(2, 'Abdelrahman Osama', '3abkareenno', 'abdelrahman.osama93@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg'),
-(3, 'mahmoud amin', 'aminawe', 'amin@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg'),
-(12, 'Ahmed Hani', 'hani93', 'hani@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg');
+INSERT INTO `users` (`id`, `full name`, `username`, `email`, `password`, `profile picture`, `role`) VALUES
+(2, 'Abdelrahman Osama', '3abkareenno', 'abdelrahman.osama93@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg', 'regular user'),
+(3, 'mahmoud amin', 'aminawe', 'amin@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg', 'regular user'),
+(13, 'Admin', 'Admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'img/admin-pp.jpg', 'admin'),
+(14, 'Ahmed Hani', 'hani93', 'hani@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg', 'regular user'),
+(15, 'Tarek Mosaad', 'tarek93', 'tarek@gmail.com', '202cb962ac59075b964b07152d234b70', 'img/default-pp.jpg', 'regular user');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +149,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `moods`
 --
@@ -163,12 +159,12 @@ ALTER TABLE `moods`
 -- AUTO_INCREMENT for table `music list`
 --
 ALTER TABLE `music list`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
