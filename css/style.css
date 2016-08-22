@@ -338,7 +338,7 @@ header .profile .profile-dropdown a:last-child li {
 }
 .friends-content .friend .profile .pic {
   height: 50px;
-  width: 50px;
+  min-width: 50px;
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 50%;
@@ -957,5 +957,10 @@ body {
   .signin {
     width: 90%;
     padding-top: 20px;
+  }
+}
+@media (max-width: 420px) {
+  #home .feed .friends-content .friend .song:nth-child(3) {
+    display: none;
   }
 }
