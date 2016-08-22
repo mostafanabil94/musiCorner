@@ -30,7 +30,7 @@
       }
     ?>
     <p><?php echo "$username"?></p>
-    <?php echo '<img src="'.$profile_pic.'" alt="" class="main-photo">' ?>
+    <?php echo '<div class="photo" style="background-image: url('.$profile_pic.');"></div>' ?>
     <ul class="profile-dropdown">
       <a href="home.php">
         <li>Home <i class="fa fa-home" aria-hidden="true"></i></li>

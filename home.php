@@ -38,10 +38,14 @@
 <body id="home">
 	<?php include "includes/header.php" ?>
 
+	<div class="loader-overlay">
+		<div class="loader"></div>
+	</div>
+
 	<div class="container cf">
 		<div class="sidebar">
 			<div class="card mini-profile">
-				<?php echo '<img src="'.$profile_pic.'" alt="" class="main-photo">' ?>
+				<?php echo '<div class="photo" style="background-image: url('.$profile_pic.');"></div>' ?>
 				<?php echo '<a class="profile" href="profile.php?profile_id='.$user_id.'">' ?>
 					<p class="name"><?php echo "$fullname"; ?></p>
 				</a>
@@ -86,7 +90,7 @@
 									$music_picture = $music['picture'];
 									$music_youtube_link = $music['youtube link'];
 									echo '<div class="song card">
-													<img src="'.$music_picture.'" alt="Cant Feel my Face" class="pic">
+													<div class="pic" style="background-image: url('.$music_picture.');"></div>
 													<p class="name">'.$music_name.'</p>
 													<p class="info">by <span>'.$music_artist.'</span></p>
 													<a href="'.$music_youtube_link.'" target="_blank" class="yt-link"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
@@ -123,8 +127,9 @@
 									if($fire_get_friend_username){
 										while ($friendss = mysqli_fetch_array($fire_get_friend_username)) {
 											$friend_username = $friendss['username'];
+											$friend_profile_pic = $friendss['profile picture'];
 											echo '<div class="profile">
-															<div class="pic"></div>
+															<div class="pic" style="background-image: url('.$friend_profile_pic.');"></div>
 															<p class="name">'.$friend_username.' <span>has suggested these songs</span></p>
 														</div>';
 										}
@@ -147,7 +152,7 @@
 											$friend_music_youtube_link = $friend_music['youtube link'];
 
 											echo '<div class="song card">
-															<img src="'.$friend_music_picture.'" alt="Cant Feel my Face" class="pic">
+															<div class="pic" style="background-image: url('.$friend_music_picture.');"></div>
 															<p class="name">'.$friend_music_name.'</p>
 															<p class="info">by <span>'.$friend_music_artist.'</span></p>
 															<a href="'.$friend_music_youtube_link.'" target="_blank" class="yt-link"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
@@ -197,6 +202,15 @@
 			$("#home .sidebar ul.buttons li.friends").click(function() {
 				$("#home .music-content").hide();
 				$("#home .friends-content").show();
+			});
+		});
+
+		$(window).load(function() {
+			$(".loader-overlay .loader").fadeOut(function () {
+				$(this).parent().fadeOut(function() {
+			            $("#home").css("overflow","auto");
+						$(this).remove();
+				});
 			});
 		});
 	</script>

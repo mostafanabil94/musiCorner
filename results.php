@@ -56,7 +56,7 @@
 						$music_youtube_link = $music['youtube link'];
 						echo '
 										<div class="song card">
-											<img src="'.$music_picture.'" alt="Cant Feel my Face" class="pic">
+											<div class="pic" style="background-image: url('.$music_picture.');"></div>
 											<p class="name">'.$music_name.'</p>
 											<p class="info">by <span>'.$music_artist.'</span></p>
 											<a href="'.$music_youtube_link.'" target="_blank" class="yt-link"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
@@ -80,7 +80,7 @@
 					$people_profile_pic = $people['profile picture'];
 					echo '<a href="profile.php?profile_id='.$people_id.'">
 									<div class="account card">
-										<img src="'.$people_profile_pic.'" alt="" class="main-photo">
+										<div class="main-photo" style="background-image: url('.$people_profile_pic.');"></div>
 										<p class="name">'.$people_name.'</p>
 									</div>
 								</a>';

@@ -227,10 +227,14 @@ header .profile p {
   margin: 5px;
   color: #E67E22;
 }
-header .profile img.photo {
+header .profile .photo {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 header .profile .profile-dropdown {
   display: none;
@@ -271,9 +275,13 @@ header .profile .profile-dropdown a:last-child li {
   position: relative;
   display: inline-block;
 }
-.song img {
+.song .pic {
   height: 180px;
   width: 180px;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .song p {
   margin: 2px;
@@ -331,7 +339,6 @@ header .profile .profile-dropdown a:last-child li {
 .friends-content .friend .profile .pic {
   height: 50px;
   width: 50px;
-  background-image: url("../img/default-pp.jpg");
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 50%;
@@ -350,7 +357,7 @@ header .profile .profile-dropdown a:last-child li {
   height: 80px;
   width: 80px;
 }
-.friends-content .friend .latest-music .song img {
+.friends-content .friend .latest-music .song .pic {
   height: 80px;
   width: 80px;
 }
@@ -382,9 +389,13 @@ header .profile .profile-dropdown a:last-child li {
   position: relative;
   display: inline-block;
 }
-.account img {
+.account .main-photo {
   height: 180px;
   width: 180px;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .account p {
   margin: 2px;
@@ -392,6 +403,64 @@ header .profile .profile-dropdown a:last-child li {
   font-size: 1rem;
 }
 
+.loader-overlay {
+  background-color: #E67E22;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+.loader-overlay .loader {
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 800ms infinite linear;
+  animation: load8 800ms infinite linear;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.loader-overlay .loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 .landing-container {
   background-image: url(../img/landing-bg.jpg);
   background-position: 50% 50%;
@@ -486,6 +555,9 @@ body {
   color: #E67E22;
 }
 
+#home {
+  overflow: hidden;
+}
 #home .sidebar {
   margin-top: 20px;
   width: 280px;
@@ -512,7 +584,7 @@ body {
 #home .sidebar .mini-profile .info {
   font-size: 0.7rem;
 }
-#home .sidebar .mini-profile img.photo {
+#home .sidebar .mini-profile .photo {
   height: 100px;
   width: 100px;
   position: absolute;
@@ -523,6 +595,10 @@ body {
           transform: translateX(-50%);
   margin: 0 auto;
   border-radius: 50%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #home .sidebar .mini-profile a.edit {
   color: white;
@@ -617,10 +693,14 @@ body {
   margin-bottom: 30px;
   max-width: 860px;
 }
-#profile img.main-photo {
+#profile .main-photo {
   display: block;
   margin: 20px auto;
   height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   border: 2px solid #E67E22;
   padding: 5px;
 }

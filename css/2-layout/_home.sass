@@ -1,4 +1,5 @@
 #home
+    overflow: hidden
     .sidebar
         margin-top: 20px
         width: 280px
@@ -22,7 +23,8 @@
                 font-size: 1.3rem
             .info
                 font-size: 0.7rem
-            img.photo
+
+            .photo
                 +size(100px)
                 position: absolute
                 top: -30px
@@ -30,6 +32,10 @@
                 transform: translateX(-50%)
                 margin: 0 auto
                 border-radius: 50%
+                display: inline-block
+                background-size: cover
+                background-repeat: no-repeat
+                background-position: center center
 
             a.edit
                 color: white

@@ -4,10 +4,15 @@
         margin-bottom: 30px
         max-width: 860px
 
-    img.main-photo
+    .main-photo
         display: block
         margin: 20px auto
-        height: 200px
+
+        +size(200px)
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center center
+
         border: 2px solid $main-color-2
         padding: 5px
 

@@ -123,7 +123,7 @@
 						if($_POST['mood'] != ''){
 							$mood = $_POST['mood'];
 						}
-						$image_db_path = 'img//2001-a-space-odyssey-wallpaper.jpg';
+						$image_db_path = 'img/default-song-img.jpg';
 						$add_song_query = "INSERT INTO `music list`
 						(`name`, `picture`, `youtube link`, `mood`, `added by`, `artist`)
 						VALUES

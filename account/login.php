@@ -18,8 +18,13 @@
 							$_SESSION['email'] = $email;
 							$_SESSION['password'] = $password;
 							$_SESSION['username'] = $signin_row['username'];
+							$_SESSION['role'] = $signin_row['role'];
 						}
-						header("Location:../home.php");
+						if($_SESSION['role'] == 'admin'){
+							header("Location:../dashboard/");
+						} else {
+							header("Location:../home.php");
+						}
 
 					}else {
 						header("Location:../signin.php?login=error");

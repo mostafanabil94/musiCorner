@@ -33,11 +33,12 @@
         if(empty($password)) $passwordERR  = "<div class='alert-danger'> Please Enter Your Password! </div>";
 
 				if (($usernameERR == '') && ($fullnameERR == '') && ($emailERR == '') && ($passwordERR == '')) {
-					$image_db_path = 'img//default-pp.jpg';
+					$image_db_path = 'img/default-pp.jpg';
+          $role = "regular user";
           $signup_query = "INSERT INTO `users`
-  				(`username`, `full name`, `email`, `password`, `profile picture`)
+  				(`username`, `full name`, `email`, `password`, `profile picture`, `role`)
   				VALUES
-  				('$username', '$fullname', '$email', '$password', '$image_db_path')";
+  				('$username', '$fullname', '$email', '$password', '$image_db_path', '$role')";
 
   				$result = mysqli_query($connection, $signup_query);
 
