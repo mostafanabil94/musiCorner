@@ -37,7 +37,7 @@
 	<?php include "includes/header.php" ?>
 
 	<div class="container card cf">
-		<?php echo '<div class="main-photo" style="background-image: url('.$profile_pic.');"></div>' ?>
+		<?php echo '<div class="main-photo" style="background-image: url(&quot;'.$profile_pic.'&quot;);"></div>' ?>
 		<p class="full-name"><?php echo "$fullname" ?></p>
 
 		<div method="post" class="edit-info">

@@ -17,6 +17,7 @@
 							$_SESSION['id'] = $signin_row['id'];
 							$_SESSION['email'] = $email;
 							$_SESSION['password'] = $password;
+							$_SESSION['profile picture'] = $signin_row['profile picture'];
 							$_SESSION['username'] = $signin_row['username'];
 							$_SESSION['role'] = $signin_row['role'];
 						}

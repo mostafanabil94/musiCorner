@@ -41,7 +41,7 @@
 	<?php include "includes/header.php" ?>
 
 	<div class="container card cf">
-		<?php echo '<div class="main-photo" style="background-image: url('.$profile_pic.');"></div>' ?>
+		<?php echo '<div class="main-photo" style="background-image: url(&quot;'.$profile_pic.'&quot;);"></div>' ?>
 		<p class="full-name"><?php echo "$fullname" ?></p>
 
 		<?php
@@ -86,7 +86,7 @@
 								$music_picture = $music['picture'];
 								$music_youtube_link = $music['youtube link'];
 								echo '<div class="song card">
-												<div class="pic" style="background-image: url('.$music_picture.');"></div>
+												<div class="pic" style="background-image: url(&quot;'.$music_picture.'&quot;);"></div>
 												<p class="name">'.$music_name.'</p>
 												<p class="info">by <span>'.$music_artist.'</span></p>
 												<a href="'.$music_youtube_link.'" target="_blank" class="yt-link"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
